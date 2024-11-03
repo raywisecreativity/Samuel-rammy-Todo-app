@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  animation: overall-background-change 10s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes overall-background-change {
+  0% {
+    background-color: #ff4500;
+  }
+  25% {
+    background-color: #0e79aa;
+  }
+  50% {
+    background-color: #81d8cc;
+  }
+  75% {
+    background-color: #6a5acd;
+  }
+  100% {
+    background-color: #ff4500;
+  }
+}
+
+.watermark {
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6em;
+  font-family: 'Dancing Script', cursive; 
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.07); 
+  animation: watermark-motion 20s linear infinite;
+  pointer-events: none; 
+  z-index: -1;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); 
+}
+
+
+@keyframes watermark-motion {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: rgba(255, 69, 0, 0.8);
+  border-radius: 8px;
+  padding: 20px;
+  animation: background-color-change 20s linear infinite;
+  backdrop-filter: blur(5px);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.5em;
+  animation: horizontal-motion 1s ease-in-out infinite alternate;
+}
+
+@keyframes horizontal-motion {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: cornflowerblue;
+}
+
+.todolist-hover {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgba(173, 216, 230, 0.9);
+}
+
+.todolist-placeholder {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.todo-item {
+  padding: 15px;
+  background-color: rgba(64, 224, 208, 0.9);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+  animation: drop-in 0.5s ease;
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  color: aliceblue;
+}
